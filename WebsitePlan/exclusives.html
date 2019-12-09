@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title>Console Exclusives</title>
+		<link href="exclusives.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<h1>Video Game Console Exclusives</h1>
+		<p>This site allows you to search for and look at video games that are exclusive to today's three biggest consoles: the Xbox One, PS4, and Nintendo Switch.</p>
+		
+		<table>
+			<tr>
+				<td class="header" id="first">Xbox One</td>
+				<td class="header">PS4</td>
+				<td class="header">Nintendo Switch</td>
+			</tr>
+			
+			
+			<tr>
+				<td>
+					<img id="xbox" src="https://compass-ssl.xbox.com/assets/f5/96/f5967de6-59db-4af0-80cf-461c03052eff.png?n=Results-Page_Page-Hero-0_X1S_1083x612.png" alt="Xbox One">
+				</td>
+				<td>
+					<img id="playstation" src="https://media.playstation.com/is/image/SCEA/playstation-4-slim-vertical-product-shot-01-us-07sep16?$native_t$" alt="PS4">
+				</td>
+				<td>
+					<img id="nintendo" src="https://pixel.nymag.com/imgs/daily/strategist/2018/11/29/gamer-gifts/nintendo-switch.w700.h700.jpg" alt="Nintendo Switch">
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="info">Company: Microsoft<br>
+					Variants: Xbox One S, Xbox One S All Digital Edition, Xbox One X <br>
+					Current Price(for Xbox One S): $299.99
+				</td>
+				<td class="info">Company: Sony<br>
+					Variants: PS4 Slim, PS4 Pro <br>
+					Current Price(for PS4 Slim): $299.99
+				</td>
+				<td class="info">Company: Nintendo<br>
+					Variants: None<br>
+					Current Price: $299.99
+				</td>
+			</tr>
+		</table>
+		
+		<!--Form for search results-->
+		<form action="searchresults.php" method="post">
+			
+			<div>
+				
+				
+			<label>Console</label>
+		
+			<!--Console options-->
+			<select onchange="highlight()" name="consoles" id="console">
+				<option value="Xbox One">Xbox One</option>
+				<option value="Playstation 4">Playstation 4</option>
+				<option value="Nintendo Switch">Nintendo Switch</option>
+			</select>
+			<br>
+		
+			<label>Genre</label>
+			
+			<!--Genre options-->
+			<select name="genre">
+				<option value="Action Adventure">Action-adventure</option>
+				<option value="Fighting">Fighting</option>
+				<option value="Platformer">Platformer</option>
+				<option value="Racing">Racing</option>
+				<option value="RPG">RPG</option>
+				<option value="Third Person Shooter">Third Person Shooter</option>
+			</select>
+			<br>
+		
+			<label>Year</label>
+		
+			<!--Year options-->
+			<select name="year">
+				<option value="2014">2014</option>
+				<option value="2015">2015</option>
+				<option value="2016">2016</option>
+				<option value="2017">2017</option>
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+				<option value="201">All</option>
+			</select>
+			<br>
+		
+			<label>Rating</label>
+		
+			<!--Rating options-->
+			<select name="rating">
+				<option value="Everyone">Everyone</option>
+				<option value="Teen">Teen</option>
+				<option value="Mature">Mature</option>
+			</select>
+			<br>
+			
+			<input type="submit" value="Search" />
+			<br>
+			</div>
+		</form>
+		
+		<div>
+			<button onClick="displayInfo()">Display/Hide Console Info</button>
+		</div>
+		
+	<script>
+	
+	function displayInfo(){
+		//Gets elements with console info
+		var elements=document.getElementsByClassName("info");
+		
+		//If elements are hidden, makes them visible, and vice versa
+		for(var i=0;i<elements.length;i++){
+			if(elements[i].style.visibility=="hidden")
+				elements[i].style.visibility="visible";
+			else
+				elements[i].style.visibility="hidden";
+		}
+	}
+	
+	function highlight(){
+		
+		//Gets console menu data
+		var element=document.getElementById("console");
+		//Gets header data from the table
+		var elements=document.getElementsByClassName("header")
+		
+		//If a console is selected, changes its header to blue and the other headers to crimson
+		if(element.value=="Xbox One"){
+			elements[0].style.color="blue";
+			elements[1].style.color="crimson";
+			elements[2].style.color="crimson";
+		}
+		else if(element.value=="Playstation 4"){
+			elements[0].style.color="crimson";
+			elements[1].style.color="blue";
+			elements[2].style.color="crimson";
+		}
+		else{
+			elements[0].style.color="crimson";
+			elements[1].style.color="crimson";
+			elements[2].style.color="blue";
+		}
+		
+		
+		
+	}
+</script>
+		
+	</body>
+</html>
+
+

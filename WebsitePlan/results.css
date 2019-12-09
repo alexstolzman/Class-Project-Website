@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color: aliceblue;
+}
+
+h1{
+	text-align: center;
+}
+
+#search_terms{
+	text-align: center;
+	font-size:20px;
+}
+
+#no_results{
+	text-align: center;
+	color: crimson;
+}
+
+.header{
+	font-weight:bold;
+	text-align: center;
+}
+
+table{
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 25px;
+	padding: 10px;
+	border-spacing: 20px;
+	border: medium;
+	border-style: solid;
+}
+
